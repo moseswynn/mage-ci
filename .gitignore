@@ -14,3 +14,5 @@ mage_data/
 secrets/
 junk/
 data_project/
+.terraform
+.terraform.lock.hcl

@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
     bucket = "mwtf"
-    key = "mage/tf_prebuild"
-    region = var.aws_region
+    key    = "mage/tf_prebuild"
+    region = "us-west-2"
   }
   required_providers {
     aws = {
@@ -15,5 +15,9 @@ terraform {
 }
 
 provider "aws" {
-  region  = var.aws_region
+  region = var.pb_aws_region
+}
+
+resource "aws_ecr_repository" "magerepo" {
+  name = var.pb_reponame
 }

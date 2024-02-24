@@ -1,20 +1,20 @@
-variable "AWS_ACCESS_KEY_ID" {
-  type = string
-  default = "AWS_ACCESS_KEY_ID"
+variable "pb_aws_access_key_id" {
+  type      = string
+  sensitive = true
 }
 
-variable "AWS_SECRET_ACCESS_KEY" {
-  type = string
-  default = "AWS_SECRET_ACCESS_KEY"
+variable "pb_aws_secret_access_key" {
+  type      = string
+  sensitive = true
 }
 
-variable "aws_region" {
+variable "pb_aws_region" {
+  type    = string
+  default = "us-west-2"
+}
+
+variable "pb_reponame" {
   type        = string
-  description = "AWS Region"
-  default     = "us-west-2"
+  description = "The name for the AWS ECR Repository"
 }
 
-variable "repository_name" {
-    type = string
-    description = "The name for the AWS ECR Repository"
-}
